@@ -1,0 +1,28 @@
+
+Sub Open_Close()
+
+MsgBox "Displaying Counts"
+
+Dim Open_Count, Close_Count, Row_Count As Integer
+
+Open_Count = 0
+Close_Count = 0
+Row_Count = Cells(Rows.Count, 1).End(xlUp).Row
+
+For i = 2 To Row_Count
+
+If Range("H" & i) = "Closed" Then
+
+Close_Count = Close_Count + 1
+
+Else
+
+Open_Count = Open_Count + 1
+
+End If
+Next i
+
+MsgBox "The number of Closed Tasks =" & Close_Count & " and The number of Open Tasks = " & Open_Count
+Range("H11").Value = "The number of Closed Tasks =" & Close_Count & " and The number of Open Tasks = " & Open_Count
+
+End Sub
